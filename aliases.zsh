@@ -9,12 +9,12 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias projects="cd $HOME/Code"
-alias sites="cd $HOME/Herd"
 
-# PHP
+# PHP - Homebrew managed
+alias php82="brew unlink php && brew link --overwrite --force php@8.2"
+alias php83="brew unlink php && brew link --overwrite --force php@8.3"
+alias phplatest="brew unlink php@8.2 php@8.3 && brew link --overwrite --force php"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
-# alias composer="herd composer"
-# alias php="herd php"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"

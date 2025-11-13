@@ -1,5 +1,6 @@
 # Taps
 tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'
 
 # Binaries
 brew 'bash' # Latest Bash version
@@ -7,14 +8,12 @@ brew 'coreutils' # Those that come with macOS are outdated
 brew 'ffmpeg'
 brew 'git'
 brew 'grep'
-brew 'httpie'
 brew 'mackup'
-brew 'fzf'
 brew 'mas' # Mac App Store manager
-brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
-brew 'svn' # Needed to install fonts
+brew 'pkg-config'
+brew 'fzf' # Fuzzy finder
 
-# Spatie Medialibrary
+# Image optimization tools
 brew 'jpegoptim'
 brew 'optipng'
 brew 'pngquant'
@@ -23,34 +22,32 @@ brew 'gifsicle'
 
 # Development
 brew 'imagemagick'
+brew 'php' # Latest PHP version (8.4 as of Nov 2025)
+brew 'composer'
+brew 'php@8.3'
+brew 'php@8.2'
+brew 'wp-cli' # WordPress CLI
+brew 'jq' # JSON processor
+brew 'httpie' # HTTP client
 
 # Apps
-cask 'bitwarden'
+cask 'arc' # Arc browser
+cask 'bitwarden' # Password manager
 brew 'bitwarden-cli'
-cask 'caffeine'
-cask 'docker'
-cask 'figma'
-cask 'firefox'
-cask 'github'
-cask 'google-chrome'
-cask 'helo'
-cask 'herd'
-cask 'httpie'
-cask 'imageoptim'
-cask 'notion'
-cask 'pastebot'
-cask 'readdle-spark'
-cask 'slack'
-cask 'sequel-ace'
-cask 'the-unarchiver'
-cask 'transmit'
-cask 'tunnelbear'
-cask 'visual-studio-code'
-cask 'monitorcontrol'
-
-# Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
+cask 'docker' # Container platform
+cask 'figma' # Design tool
+cask 'firefox' # Browser
+cask 'github' # GitHub Desktop
+cask 'google-chrome' # Browser
+cask 'imageoptim' # Image compression
+cask 'notion' # Notes and docs
+cask 'raycast' # Spotlight replacement (recommended for productivity)
+cask 'readdle-spark' # Email client
+cask 'slack' # Communication
+cask 'sequel-ace' # MySQL/MariaDB client
+cask 'the-unarchiver' # Archive utility
+cask 'visual-studio-code' # Code editor
+cask 'monitorcontrol' # External monitor brightness control
 
 # Fonts
 cask 'font-lato'

@@ -78,7 +78,12 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wp-cli vscode zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting alias-tips)
+plugins=(git wp-cli vscode zsh-interactive-cd zsh-nvm zsh-autosuggestions zsh-syntax-highlighting alias-tips)
+
+# NVM configuration - auto-install and use LTS by default
+export NVM_AUTO_USE=true
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=false
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,30 +114,10 @@ export LANG=fr_FR.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Herd injected PHP binary.
-export PHP_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/":$PHP_INI_SCAN_DIR
+# Load .local/bin/env if it exists
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
-# Herd injected NVM configuration
-export NVM_DIR="$HOME/Library/Application Support/Herd/config/nvm"
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
-
-# Herd injected PHP 7.4 configuration.
-export HERD_PHP_74_INI_SCAN_DIR="/Users/thomas/Library/Application Support/Herd/config/php/74/"
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/thomas/Library/Application Support/Herd/config/php/83/"
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/thomas/Library/Application Support/Herd/config/php/82/"
-
-# Herd injected PHP 8.1 configuration.
-export HERD_PHP_81_INI_SCAN_DIR="/Users/thomas/Library/Application Support/Herd/config/php/81/"
-
-# Herd injected PHP 8.0 configuration.
-export HERD_PHP_80_INI_SCAN_DIR="/Users/thomas/Library/Application Support/Herd/config/php/80/"
-
-# Herd injected PHP binary.
-export PATH="/Users/thomas/Library/Application Support/Herd/bin/":$PATH
+# Docker CLI completions
+fpath=(/Users/thomas/.docker/completions $fpath)
+autoload -Uz compinit
+compinit

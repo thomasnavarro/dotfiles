@@ -2,11 +2,7 @@
 
 This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything needed to install my preferred setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy!
 
-📖 - [Read the blog post](https://driesvints.com/blog/getting-started-with-dotfiles)
-📺 - [Watch the screencast on Laracasts](https://laracasts.com/series/guest-spotlight/episodes/1)
-💡 - [Learn how to build your own dotfiles](https://github.com/driesvints/dotfiles#your-own-dotfiles)
-
-If you find this repo useful, [consider sponsoring me](https://github.com/sponsors/driesvints) (a little bit)! ❤️
+� - Inspired by [driesvints/dotfiles](https://github.com/driesvints/dotfiles)
 
 ## A Fresh macOS Setup
 
@@ -32,28 +28,59 @@ After backing up your old Mac you may now follow these install instructions to s
    2.2. Otherwise [generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) by running:
 
    ```zsh
-   curl https://raw.githubusercontent.com/driesvints/dotfiles/HEAD/ssh.sh | sh -s "<your-email-address>"
+   curl https://raw.githubusercontent.com/thomasnavarro/dotfiles/HEAD/ssh.sh | sh -s "<your-email-address>"
    ```
 
 3. Clone this repo to `~/.dotfiles` with:
 
-    ```zsh
-    git clone --recursive git@github.com:driesvints/dotfiles.git ~/.dotfiles
-    ```
+   ```zsh
+   git clone --recursive git@github.com:thomasnavarro/dotfiles.git ~/.dotfiles
+   ```
 
 4. Run the installation with:
 
-    ```zsh
-    cd ~/.dotfiles && ./fresh.sh
-    ```
+   ```zsh
+   cd ~/.dotfiles && ./fresh.sh
+   ```
 
-5. Start `Herd.app` and run its install process
-6. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
+5. After mackup is synced with your cloud storage, restore preferences by running `mackup restore`
+6. Install Node.js LTS with: `nvm install --lts && nvm use --lts`
 7. Restart your computer to finalize the process
 
 Your Mac is now ready to use!
 
 > 💡 You can use a different location than `~/.dotfiles` if you want. Make sure you also update the references in the [`.zshrc`](./.zshrc#L2) and [`fresh.sh`](./fresh.sh#L20) files.
+
+## PHP Version Management
+
+This setup uses Homebrew to manage PHP versions. By default, PHP 8.4 (latest) is installed along with PHP 8.3 and 8.2.
+
+**Switch between PHP versions using these aliases:**
+
+```zsh
+phplatest  # Switch to PHP 8.4 (latest)
+php83      # Switch to PHP 8.3
+php82      # Switch to PHP 8.2
+```
+
+After switching versions, verify with `php -v`.
+
+## Node.js Version Management
+
+This setup uses `zsh-nvm` plugin to manage Node.js versions through NVM.
+
+**Common NVM commands:**
+
+```zsh
+nvm install --lts      # Install the latest LTS version
+nvm install node       # Install the latest version
+nvm use --lts          # Use the latest LTS version
+nvm use 18             # Use a specific version
+nvm ls                 # List installed versions
+nvm current            # Show current version
+```
+
+The plugin is configured to automatically use the correct Node version when entering a directory with a `.nvmrc` file.
 
 ### Cleaning your old Mac (optionally)
 

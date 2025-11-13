@@ -1,15 +1,15 @@
 # #!/bin/bash
 
-# echo "Setting up test project..."
+# This script is currently disabled.
+# It can be adapted to quickly setup any type of project.
+# Customize it according to your specific project setup workflow.
+#
+# Usage: Uncomment and customize the lines below for your own project setup workflow
+
+# echo "Setting up project..."
 
 # REPOSITORY=$1
 # DIRECTORY="./$2"
-
-# if [[ $PWD != "$HOME/Herd" ]]; then
-#     echo "You can only setup projects in the $HOME/Herd directory."
-
-#     exit 1
-# fi
 
 # if [ -z "$REPOSITORY" ] || [ -z "$DIRECTORY" ]; then
 #     echo "Please provide both a repository and target directory."
@@ -20,18 +20,10 @@
 # git clone $REPOSITORY $DIRECTORY
 # cd $DIRECTORY
 
-# touch database/database.sqlite
-
-# cp .env.example .env
-# sed -i '' 's/DB_DATABASE=.*/DB_DATABASE=laravel/' .env
-# sed -i '' 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
-# sed -i '' 's/DB_PASSWORD=.*/DB_PASSWORD=/' .env
-
-# composer install
-# php artisan key:generate
-# php artisan migrate:fresh --seed
-
-# npm install
-# npm run build
+# # Add your project setup steps here
+# # Examples:
+# # npm install
+# # composer install
+# # cp .env.example .env
 
 # open -a "/Applications/Visual Studio Code.app" "`pwd`"
