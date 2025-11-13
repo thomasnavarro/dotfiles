@@ -1,7 +1,3 @@
-# Taps
-tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
-
 # Binaries
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
